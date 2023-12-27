@@ -1,0 +1,11 @@
+version: "3.11"
+services:
+ one_two_dev:
+  container_name: one_two_dev_container
+  build: .
+  volumes:
+   - .:/django
+  ports:
+   - 8000:80
+  image: one_two_dev:django
+  command: python manage.py runserver 0.0.0.0:80
